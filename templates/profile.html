@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile Setup</title>
+</head>
+<body>
+    <h1>User Profile Setup</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+        
+        <label for="bio">Bio:</label>
+        <textarea name="bio"></textarea><br>
+        
+        <label for="interests">Areas of Interest:</label>
+        <input type="text" name="interests"><br>
+
+        <label for="question">Question:</label>
+    <input type="text" name="question"><br>
+        
+        <input type="submit" value="Create Profile">
+    </form>
+
+    {% if advice %}
+    <h2>Generated Advice:</h2>
+    <p>{{ advice }}</p>
+    {% endif %}
+   
+</body>
+</html>
